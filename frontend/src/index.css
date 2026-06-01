@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #c0392b;
+  --color-primary-dark: #96281b;
+  --color-secondary: #e67e22;
+  --color-secondary-light: #f5b041;
+  --color-neutral-light: #f8f9fa;
+  --color-neutral-dark: #1c1c1c;
+  --color-cream: #fff8f0;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+body {
+  @apply bg-cream text-neutral-dark font-sans antialiased;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(192, 57, 43, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(230, 126, 34, 0.06) 0%, transparent 40%);
+}
+
+/* ── Reusable design tokens ── */
+.glass-nav {
+  @apply border-b border-white/20 bg-white/80 backdrop-blur-xl;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 font-semibold text-white shadow-lg shadow-primary/25 transition-all hover:-translate-y-0.5 hover:bg-primary-dark hover:shadow-xl hover:shadow-primary/30;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl border-2 border-white/80 bg-white/10 px-6 py-3 font-semibold text-white backdrop-blur-sm transition-all hover:bg-white hover:text-primary;
+}
+
+.section-heading {
+  @apply text-3xl font-bold tracking-tight text-neutral-dark sm:text-4xl;
+}
+
+.section-subheading {
+  @apply mt-2 text-gray-600;
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10;
+}
+
+.pizza-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c0392b' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+}
+
+.footer-link {
+  @apply text-gray-400 transition-colors hover:text-secondary-light hover:translate-x-0.5 inline-block;
+}
